@@ -54,3 +54,42 @@ public class Ejercicio_1 {
         return numero;
     }
 }
+
+// Por IA
+/*
+ * public class Ejercicio_1 {
+ * public static void main(String[] args) {
+ * iniciarPrograma();
+ * }
+ * 
+ * public static void iniciarPrograma() {
+ * System.out.println("Ejercicio 1");
+ * procesarNumeros();
+ * mostrarMensajeDespedida();
+ * }
+ * 
+ * public static void procesarNumeros() {
+ * int numero = solicitarNumero();
+ * 
+ * while (numero != 0) {
+ * mostrarNumeroIngresado(numero);
+ * numero = solicitarNumero();
+ * }
+ * }
+ * 
+ * public static int solicitarNumero() {
+ * System.out.println("Ingrese un numero natural: ");
+ * return Utils.leerInt();
+ * }
+ * 
+ * public static void mostrarNumeroIngresado(int numero) {
+ * System.out.println("El numero que ingresó es el " + numero);
+ * }
+ * 
+ * public static void mostrarMensajeDespedida() {
+ * System.out.
+ * println("Usted ha ingresado el numero cero (0). Gracias por usar nuestro programa"
+ * );
+ * }
+ * }
+ */
