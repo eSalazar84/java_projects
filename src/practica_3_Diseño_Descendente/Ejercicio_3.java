@@ -1,7 +1,6 @@
 package practica_3_Diseño_Descendente;
 
 import utils.*;
-import practica_3_Diseño_Descendente.Ejercicio_1;
 
 /* 
  * 
@@ -29,11 +28,11 @@ public class Ejercicio_3 {
         procesarInformacion();
     }
 
-    public static void numeroIngresado() {
-        int inputIntUser;
+    public static String numeroIngresado(String historial) {
         System.out.println("Ingrese un numero natural: ");
-        inputIntUser = Utils.leerInt();
-        System.out.println("El numero ingresado es " + inputIntUser);
+        int num = Utils.leerInt();
+        historial += num + ", "; // Concatena el nuevo número
+        return historial; // Retorna el historial actualizado
     }
 
     public static char seguirPrograma(){
@@ -42,11 +41,13 @@ public class Ejercicio_3 {
     }
 
     public static void procesarInformacion() {
-        String historialNumeros;
-        char opcion;        
+        char opcion;
+        String historial = ""; // Paso 1: String vacío
+        
         opcion = seguirPrograma();        
         while (opcion != 's') {
-            numeroIngresado();
+            historial = numeroIngresado(historial); // Paso 2: Actualiza historial
+            System.out.println("Números ingresados: " + historial); // Muestra todo
             opcion = seguirPrograma();
         }
     }
