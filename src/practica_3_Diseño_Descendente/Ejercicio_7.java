@@ -66,5 +66,4 @@ public class Ejercicio_7 {
         System.out.println("La sumatoria de los primeros 200 numeros naturales es de " + acum);
     }
 
-
 }
