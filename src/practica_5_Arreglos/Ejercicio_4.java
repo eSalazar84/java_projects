@@ -24,14 +24,18 @@ public class Ejercicio_4 {
         final char[] arrChar = { 'a', 'm', 'k', 'l', 'p', 'u', 'b', 'r', 't', 'c' };
         char charUsuario = charIngresado();
         int posicion = 0;
+        boolean encontrado = false;
         for (int i = 0; i < arrChar.length; i++) {
             if (arrChar[i] == charUsuario) {
                 posicion = i;
+                System.out.println("El caracter que buscas, " + charUsuario + " esta en la posicion " + posicion);
+                encontrado = true;
             }
         }
-        
-        System.out.println("El caracter que buscas, " + charUsuario + " esta en la posicion " + posicion);
-        
+        if (!encontrado) {
+            System.out.println("El caracter que buscas, " + charUsuario + " no figura en el listado");
+        }
+
     }
 
     public static char charIngresado() {
