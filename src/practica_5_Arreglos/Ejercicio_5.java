@@ -1,5 +1,7 @@
 package practica_5_Arreglos;
 
+import java.util.Arrays;
+
 /* Hacer un programa que dado un arreglo de caracteres de tamaño
 10 que se encuentra cargado, invierta el orden del contenido. Este
 intercambio no se debe realizar de manera explícita, hay que
@@ -24,7 +26,9 @@ public class Ejercicio_5 {
         for (int i = (arrChar.length - 1), j = 0; i >= 0; i--, j++) {
             inverterArr[j] = arrChar[i];
         }
-        System.out.println(inverterArr);
+
+        System.out.println("    Arreglo Original: " + Arrays.toString(arrChar));
+        System.out.println("    Arreglo invertido: " + Arrays.toString(inverterArr));
     }
 
 }
