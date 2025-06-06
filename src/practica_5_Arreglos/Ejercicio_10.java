@@ -15,6 +15,7 @@ copia de la última posición del arreglo en la anteúltima posición).
 public class Ejercicio_10 {
     public static void main(String[] args) {
         info();
+        // copiarArreglo();
         isOcurrencia();
     }
 
@@ -27,35 +28,49 @@ public class Ejercicio_10 {
                 "copia de la última posición del arreglo en la anteúltima posición).");
     }
 
-    public static void isOcurrencia() {
-        final int[] arrEnteros = { 2, 5, 3, 8, 4, 25, 10, 68, 85, 9 };
-        int[] arrCorrimiento = new int[10];
-        boolean ocurrencia = false;
+    final static int MAX = 10;
+    final static int[] arrEnteros = { 2, 5, 3, 8, 4, 25, 10, 68, 85, 9 };
 
-        int numUser = numeroIngresado();
+    public static int[] copiarArreglo() {
+        int[] arrCorrimiento = new int[MAX];
 
         for (int i = 0; i < arrEnteros.length; i++) {
-            if (arrEnteros[i] == numUser) {
-                ocurrencia = true;
-                for (int j = arrEnteros[i]; j < arrEnteros.length; j++) {
-                    arrCorrimiento[i] = arrEnteros[i - 1];
-                };
-            } else {
-                arrCorrimiento[i] = arrEnteros[i];
-            }
+            arrCorrimiento[i] = arrEnteros[i];
         }
 
-        // arreglo original
-        System.out.println("Arreglo original:           " + Arrays.toString(arrEnteros));
-
-        // Requerimiento del ejercicio
-        System.out.println("Corrimiento a la izquierda: " + Arrays.toString(arrCorrimiento));
-
+        return arrCorrimiento;
     }
 
     public static int numeroIngresado() {
         System.out.println("Ingrese un numero natural: ");
         int numero = Utils.leerInt();
         return numero;
+    }
+
+    public static void isOcurrencia() {
+
+        int[] arreglo = copiarArreglo();
+
+        int numUser = numeroIngresado();
+        int pos = -1;
+
+        for (int i = 0; i < arreglo.length; i++) {
+            if (arreglo[i] == numUser) {
+                pos = i;
+            }
+        }
+
+        if (pos != -1) {
+            for (int i = pos; i < arreglo.length - 1; i++) {
+                arreglo[i] = arreglo[i + 1];
+            } 
+            arreglo[arreglo.length - 1] = 0;
+        }
+
+        // arreglo original
+        System.out.println("Arreglo original:           " + Arrays.toString(arrEnteros));
+
+        // Requerimiento del ejercicio
+        System.out.println("Corrimiento a la izquierda: " + Arrays.toString(arreglo));
     }
 }
